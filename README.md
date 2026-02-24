@@ -14,8 +14,8 @@ Welcome to the Metamodel Assisted Quantum Inspired Evolutionary Algorithms repos
 
 To get started with the Quantum-Inspired Evolutionary Algorithms, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/iagerogiannis/quantum-inspired-evolutionary-algorithms.git`
-2. Navigate to the project directory: `cd quantum-inspired-evolutionary-algorithms`
+1. Clone the repository: `git clone https://github.com/iagerogiannis/metamodel-assisted-qiea`
+2. Navigate to the project directory: `cd metamodel-assisted-qiea`
 3. Set up a virtual environment:
    - On Windows, run: `py -m venv .venv`
    - On Unix or MacOS, run: `python3 -m venv .venv`
