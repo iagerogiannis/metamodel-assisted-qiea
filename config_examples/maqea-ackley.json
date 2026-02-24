@@ -1,0 +1,137 @@
+{
+  "experiment": {
+    "name": "Ackley (MAQEA)",
+    "shots": 5,
+    "seed_value": 10
+  },
+  "problem": {
+    "fitness_function": "Ackley",
+    "multi_objective": false,
+    "design_variables": [
+      {
+        "name": "x1",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x2",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x3",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x4",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x5",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x6",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x7",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x8",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x9",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "x10",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      }
+    ]
+  },
+  "optimization": {
+    "evolution_strategy": {
+      "populations": {
+        "parents_population_size": 6,
+        "offspring_population_size": {
+          "type": "constant",
+          "value": 6
+        },
+        "elites_population_size": 12
+      },
+      "quantum_rotation": {
+        "angle_of_rotation": 1.0,
+        "measurements_per_individual": 1,
+        "_mutation_probability_measurement": 0.02,
+        "mutation_probability_measurement": 0.01,
+        "mutation_probability_rotation": 0.0,
+        "rotation_table": [
+          "randfloat",
+          -1,
+          1,
+          "randfloat",
+          0,
+          1,
+          -1,
+          0
+        ],
+        "_qubit_bound": 1.521708941582556
+      },
+      "migration": {
+        "neighbourhood_size": 2,
+        "local_migration_period": 30,
+        "global_migration_period": 0
+      },
+      "parents_selection": {
+        "method": "linear_weighted",
+        "elitism_rate": 0.2,
+        "include_elites_chance": 0.2
+      },
+      "crossover": {
+        "crossover_period": 10,
+        "crossover_rate": 0.2
+      },
+      "stagnation_control": {
+        "stagnated_evals_threshold": 200,
+        "num_shaking_gens": 5
+      },
+      "termination_criteria": {
+        "max_num_of_evals": 10000,
+        "target_fitness": 0.182032
+      }
+    },
+    "metamodel": {
+      "config": "config_examples/metamodel/config-100.json"
+    }
+  },
+  "io_params": {
+    "db": "in_memory",
+    "print_every": 1,
+    "write_every": 1,
+    "output_dir": "output/data/maqea-ackley",
+    "output_plots_dir": "output/plots/maqea-ackley",
+    "log_snapshot_interval": 100,
+    "log_chromosomes": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "metamodel_type": "simple_rbf",
+  "min_num_samples": 100,
+  "exact_evaluations_per_generation_percentage": 0.1,
+  "num_training_patterns": 8,
+  "rbfn": {
+    "test_size": 0.25
+  },
+  "som": {
+    "num_clusters": [
+      5,
+      15
+    ],
+    "sigma": 0.5,
+    "learning_rate": 0.5,
+    "neighborhood_function": "gaussian",
+    "lr_decay_function": "asymptotic_decay",
+    "sigma_decay_function": "asymptotic_decay",
+    "num_iterations": 8
+  },
+  "radii_calculation": {
+    "max_num_branches": 4
+  },
+  "termination_criteria": {
+    "max_retries": 8
+  }
+}

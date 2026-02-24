@@ -1,0 +1,145 @@
+{
+  "experiment": {
+    "name": "ZDT1",
+    "shots": 3,
+    "seed_value": 1
+  },
+  "problem": {
+    "fitness_function": "ZDT1",
+    "multi_objective": true,
+    "design_variables": [
+      {
+        "name": "x",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "y",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "z",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "v",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "u",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "w",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "t",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "s",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "r",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      },
+      {
+        "name": "q",
+        "lower_bound": 0,
+        "upper_bound": 1,
+        "bits": 10
+      }
+    ]
+  },
+  "optimization": {
+    "evolution_strategy": {
+      "populations": {
+        "parents_population_size": 20,
+        "offspring_population_size": {
+          "type": "constant",
+          "value": 20
+        },
+        "_offspring_population_size": {
+          "type": "linear",
+          "x0": 0,
+          "y0": 8,
+          "x1": 800,
+          "y1": 4,
+          "min_val": 4,
+          "max_val": 8
+        },
+        "elites_population_size": 20
+      },
+      "quantum_rotation": {
+        "angle_of_rotation": 0.25,
+        "measurements_per_individual": 2,
+        "mutation_probability_measurement": 0.0,
+        "mutation_probability_rotation": 0.0,
+        "_qubit_bound": 1.45,
+        "rotation_table": [
+          "randfloat",
+          -1,
+          1,
+          "randfloat",
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "migration": {
+        "neighbourhood_size": 2,
+        "local_migration_period": 0,
+        "global_migration_period": 0
+      },
+      "parents_selection": {
+        "method": "linear_weighted",
+        "elitism_rate": 0.0,
+        "include_elites_chance": 0.0,
+        "_method": "",
+        "_tournament_size": 3
+      },
+      "crossover": {
+        "crossover_period": 6,
+        "crossover_rate": 1
+      },
+      "stagnation_control": {
+        "stagnated_evals_threshold": 15000,
+        "_stagnated_evals_threshold": 200,
+        "num_shaking_gens": 5
+      },
+      "termination_criteria": {
+        "max_num_of_evals": 15000,
+        "_target_fitness": 0.182032
+      }
+    }
+  },
+  "io_params": {
+    "db": "in_memory",
+    "print_every": 100,
+    "write_every": 1,
+    "output_dir": "output/data/qea-zdt1",
+    "output_plots_dir": "output/plots/qea-zdt1",
+    "log_snapshot_interval": 100,
+    "log_chromosomes": true
+  }
+}

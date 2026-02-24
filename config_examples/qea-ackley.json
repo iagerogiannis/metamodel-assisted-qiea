@@ -1,0 +1,143 @@
+{
+  "experiment": {
+    "name": "Ackley (QEA)",
+    "shots": 10,
+    "seed_value": 10
+  },
+  "problem": {
+    "_fitness_function": "easy-setup/test-functions/executables/ackley",
+    "fitness_function": "Ackley",
+    "multi_objective": false,
+    "design_variables": [
+      {
+        "name": "x",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "y",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "z",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "v",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "u",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "w",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "t",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "s",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "r",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      },
+      {
+        "name": "q",
+        "lower_bound": -32.768,
+        "upper_bound": 32.768,
+        "bits": 10
+      }
+    ]
+  },
+  "optimization": {
+    "evolution_strategy": {
+      "populations": {
+        "parents_population_size": 6,
+        "offspring_population_size": {
+          "type": "constant",
+          "value": 6
+        },
+        "_offspring_population_size": {
+          "type": "linear",
+          "x0": 0,
+          "y0": 8,
+          "x1": 800,
+          "y1": 4,
+          "min_val": 4,
+          "max_val": 8
+        },
+        "elites_population_size": 12
+      },
+      "quantum_rotation": {
+        "angle_of_rotation": 1.0,
+        "measurements_per_individual": 1,
+        "mutation_probability_measurement": 0.02,
+        "mutation_probability_rotation": 0.0,
+        "rotation_table": [
+          "randfloat",
+          -1,
+          1,
+          "randfloat",
+          0,
+          1,
+          -1,
+          0
+        ],
+        "qubit_bound": 1.521708941582556
+      },
+      "migration": {
+        "neighbourhood_size": 2,
+        "local_migration_period": 30,
+        "global_migration_period": 0
+      },
+      "parents_selection": {
+        "method": "linear_weighted",
+        "elitism_rate": 0.2,
+        "include_elites_chance": 0.2
+      },
+      "crossover": {
+        "crossover_period": 10,
+        "crossover_rate": 0.2
+      },
+      "stagnation_control": {
+        "stagnated_evals_threshold": 200,
+        "num_shaking_gens": 5
+      },
+      "termination_criteria": {
+        "max_num_of_evals": 10000,
+        "target_fitness": 0.182032
+      }
+    }
+  },
+  "io_params": {
+    "db": "in_memory",
+    "print_every": 100,
+    "write_every": 1,
+    "output_dir": "output/data/qea-ackley",
+    "output_plots_dir": "output/plots/qea-ackley",
+    "log_snapshot_interval": 100,
+    "log_chromosomes": true
+  }
+}
