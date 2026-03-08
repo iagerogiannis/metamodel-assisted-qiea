@@ -5,7 +5,7 @@
     "seed_value": 10
   },
   "problem": {
-    "_fitness_function": "easy-setup/test-functions/executables/ackley",
+    "_fitness_function": "some/path/to/some/executable",
     "fitness_function": "Ackley",
     "multi_objective": false,
     "design_variables": [
